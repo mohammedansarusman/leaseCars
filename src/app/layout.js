@@ -1,6 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
+
 import { NavigationBar } from "@/components/navigation-bar/NavigationBar";
 
 const roboto = Roboto({
@@ -8,6 +9,12 @@ const roboto = Roboto({
   weight: ["400", "700"], // Optional
   style: ["normal", "italic"], // Optional
 });
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // choose the weights you need
+});
+
 
 
 
@@ -20,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-gray-200 ${roboto.className}`}
+        className={`antialiased bg-gray-200 ${poppins.className}`}
       >
         {<NavigationBar/>}
         {children}

@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "../ui/button";
-import { Ghost } from "lucide-react";
+import { ButtonGeneral } from "../general/ButtonGeneral";
 
 export const Heading1 = () => {
   return (
@@ -20,7 +19,9 @@ export const Heading1 = () => {
         <li>Insurance & Maintenance Included</li>
         <li>Flexible Terms From 1 to 24 Months</li>
       </ul>
-      <Button variant="outline" className="bg-sky-600 w-[200px] py-7 text-gray-100 font-bold hover:bg-sky-700 text-xl cursor-pointer hover:text-gray-100">Browse cars</Button>
+      <ButtonGeneral value = "Browse Cars"/>
     </div>
   );
 };
+
+// className="  text-gray-100 font-bold hover:bg-sky-700 text-xl cursor-pointer hover:text-gray-100"
