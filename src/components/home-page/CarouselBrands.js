@@ -33,7 +33,7 @@ export const CarouselBrands = () => {
   );
 
   return (
-    <div className="w-full bg-red-300 py-10 flex justify-center">
+    <div className="w-full py-15 flex justify-center">
       <div
         className="w-[70%] overflow-hidden" // 👈 Embla manages scroll
         ref={emblaRef}
@@ -41,10 +41,13 @@ export const CarouselBrands = () => {
         <div className="flex embla__container gap-3">
           {logo.map((item) => (
             <div
-              className="embla__slide flex-[0_0_100px] h-[100px] relative bg-fuchsia-500"
+              className="embla__slide flex-[0_0_100px]"
               key={item}
             >
-              <Image src={item} fill objectFit="contain" alt={item} />
+              <Image 
+                src={item} width={50} height={25} alt={item}
+                className="sm:h-[50px] sm:w-[50px] md:h-[75px] md:w-[75px] lg:w-[90px] lg:h-[90px] object-contain"
+              />
             </div>
           ))}
         </div>
