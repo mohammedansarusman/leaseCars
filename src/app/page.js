@@ -6,21 +6,18 @@ import { Heading2 } from "@/components/home-page/Heading2";
 import { Heading3 } from "@/components/home-page/Heading3";
 import { CarouselBrands } from "@/components/home-page/CarouselBrands";
 import { Heading4 } from "@/components/home-page/Heading4";
-import { navigationStore } from "@/store/navigation";
 
 export default function Home() {
-  const bar = navigationStore(state=>state.bar);
-  const setBar = navigationStore(state=>state.setBar)
   return (
     <div className="bg-white pt-10">
-      {bar && <div>
+      <div>
         <Heading1 /> 
         <Heading2 />
         <Heading3 />
         <CarouselBrands />
         <Heading4 />
-      </div>}
-       
+      </div>
+      {/* <div className="w-full bg-blue-500 fixed inset-10"></div> */}
     </div>
   );
 }
