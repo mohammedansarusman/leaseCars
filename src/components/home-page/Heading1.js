@@ -4,12 +4,12 @@ import { ButtonGeneral } from "../general/ButtonGeneral";
 export const Heading1 = () => {
   return (
     <div className="w-full py-14 px-10 gap-4 flex flex-col">
-      <header className="text-4xl font-extrabold tracking-wide text-gray-600">
+      <header className="text-3xl font-extrabold tracking-wide text-gray-600">
         Cars Made Easy - The New Way to Drive Cars
       </header>
 
       <section className="w-full">
-        <h1 className="text-xl font-extrabold text-gray-600 ">
+        <h1 className="text-md font-extrabold text-gray-600 ">
           Monthly & Long-Term Car Rental in Dubai & the UAE
         </h1>
       </section>
