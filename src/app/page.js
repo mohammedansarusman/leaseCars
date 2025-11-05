@@ -6,6 +6,7 @@ import { Heading2 } from "@/components/home-page/Heading2";
 import { Heading3 } from "@/components/home-page/Heading3";
 import { CarouselBrands } from "@/components/home-page/CarouselBrands";
 import { Heading4 } from "@/components/home-page/Heading4";
+import { Footer } from "@/components/home-page/Footer";
 
 export default function Home() {
   return (
@@ -16,8 +17,8 @@ export default function Home() {
         <Heading3 />
         <CarouselBrands />
         <Heading4 />
+        <Footer />
       </div>
-      {/* <div className="w-full bg-blue-500 fixed inset-10"></div> */}
     </div>
   );
 }
