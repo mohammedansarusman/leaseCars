@@ -2,17 +2,15 @@
 import { MenuIcon } from "lucide-react";
 import { Heading } from "./Heading";
 import Link from "next/link";
-import { useState } from "react";
 
 export const NavigationBar = () => {
-  const {long, setLong} = useState(false)
   
   const handleClick = () => {
     console.log("clicked")
   };
 
 return (
-  <div className={`w-full h-[10vh] bg-gray-100/98  flex items-center fixed md:px-12 lg:px-20`}>
+  <div className={`w-full h-[10vh] bg-gray-100/98  flex items-center fixed z-50 md:px-12 lg:px-20`}>
     {/* car lease and menu icon */}
     <div className="w-full flex relative">
       <div className="w-[40%] pl-4">

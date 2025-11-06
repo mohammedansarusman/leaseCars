@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import { Poppins } from "next/font/google";
 
 import { NavigationBar } from "@/components/navigation-bar/NavigationBar";
+import { Providers } from "@/components/general/Providers";
 
 const roboto = Roboto({
   subsets: ["latin"], // Required
@@ -29,8 +30,12 @@ export default function RootLayout({ children }) {
       <body
         className={`antialiased bg-gray-200 ${poppins.className}`}
       >
-        {<NavigationBar/>}
-        {children}
+        <Providers>
+          {<NavigationBar/>}
+          {children}
+        </Providers>
+          
+        
       </body>
     </html>
   );
