@@ -4,8 +4,6 @@ import { data } from "@/app/constant/list";
 import { carDetails } from "@/app/constant/details";
 
 export const CarsList = ({ data }) => {
-  console.log("data=>", carDetails);
-
   return (
     <section className="w-full flex flex-wrap justify-center items-center gap-2">
       {data.map((item) => (
