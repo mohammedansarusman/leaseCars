@@ -7,6 +7,7 @@ import {
   LinkedinIcon,
 } from "lucide-react";
 import React from "react";
+import { FooterItems } from "./FooterItems";
 
 export const Footer = () => {
   return (
@@ -15,24 +16,24 @@ export const Footer = () => {
         <div className="space-y-2">
           <h1 className="font-semibold">Product</h1>
           <div className="font-thin space-y-2 text-sm">
-            <p className="transform-translate duration-500 hover:translate-x-2">Browse Cars</p>
-            <p className="transform-translate duration-500 hover:translate-x-2">Car Lease for Business</p>
-            <p className="transform-translate duration-500 hover:translate-x-2">EVs</p>
+            <FooterItems content = "Browse Cars" />
+            <FooterItems content = "Car Lease for Business" />
+            <FooterItems content = "EVs" />
           </div>
         </div>
         <div className="space-y-2">
           <h1 className="font-semibold">Company</h1>
           <div className="font-thin space-y-2 text-sm">
-            <p className="transform-translate duration-500 hover:translate-x-2">Blogs</p>
-            <p className="transform-translate duration-500 hover:translate-x-2">FAQs</p>
-            <p className="transform-translate duration-500 hover:translate-x-2">Contact Us</p>
+            <FooterItems content = "Blogs" />
+            <FooterItems content = "FAQs" />
+            <FooterItems content = "Contact Us" />
           </div>
         </div>
         <div className="space-y-2"> 
           <h1 className="font-semibold">Legal</h1>
           <div className="space-y-2 text-sm">
-            <p className="transform-translate duration-500 hover:translate-x-2">Privacy Policy</p>
-            <p className="transform-translate duration-500 hover:translate-x-2">Terms & Conditions</p>
+            <FooterItems content = "Privacy Policy" />
+            <FooterItems content = "Terms & Conditions" />
           </div>
         </div>
       </div>
