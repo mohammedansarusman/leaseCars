@@ -26,12 +26,12 @@ export const ResponsiveNavBar = () => {
 
   return (
     <div
-      className={`w-full h-[90vh]  bg-gray-50 absolute top-[10vh] left-0 transition-transform duration-500 
+      className={`w-full h-[90vh] bg-gray-50 absolute top-[10vh] left-0 transition-transform duration-400 
       ${longBar ? "translate-x-0" : "translate-x-full"}`}
     >
       <main className="flex flex-col w-full px-10">
         {navHeadings.map((item, index) => (
-          <div key={linkAddress[index]} className="w-full h-25 flex items-center border-b-[1px] border-gray-400">
+          <div key={linkAddress[index]} className="w-full h-25 flex items-center border-b border-gray-400">
             <Link
               href={linkAddress[index]}
               onClick={handleClick}
@@ -40,9 +40,7 @@ export const ResponsiveNavBar = () => {
             >
               {item}
             </Link>
-            {/* <p className="w-full h-1 text-black"></p> */}
           </div>
-          
         ))}
       </main>
     </div>

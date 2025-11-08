@@ -1,9 +1,11 @@
 import React from "react";
 import { ButtonGeneral } from "../general/ButtonGeneral";
+import { DynamicHeading3 } from "./DynamicHeading3";
 
 export const Heading3 = () => {
   return (
     <div className="w-full py-10 px-10 gap-4 flex flex-col bg-gray-50 text-gray-600">
+      <DynamicHeading3 />
       <header className="text-3xl font-extrabold tracking-wide text-gray-600">
         How it Works
       </header>

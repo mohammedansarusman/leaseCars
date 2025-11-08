@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-gray-200 ${poppins.className}`}
+        className={`antialiased bg-white ${poppins.className}`}
       >
         <Providers>
           {<NavigationBar/>}
