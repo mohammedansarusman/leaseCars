@@ -27,10 +27,8 @@ return (
   <div className={`w-full ${longBar ? "h-screen " : "h-[10vh]"} bg-gray-100/98  flex flex-col items-center fixed z-50 md:px-12 lg:px-20`}>
     {/* car lease and menu icon */}
     <div className="w-full h-[10vh] flex items-center absolute left-0 top-0">
-      <div className="w-[40%] pl-4">
-        <Link href="/">
+      <div className="w-[40%] pl-4 bg-yellow-200">
           <Heading />
-        </Link>
       </div>
      
       <div className="w-[60%] flex items-center justify-end gap-4 pr-4">
