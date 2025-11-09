@@ -1,22 +1,23 @@
 "use client";
-import { useState } from "react";
 import { Search, X } from "lucide-react";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCarModel } from "@/store/carsSlice";
 
 export const SearchBar = () => {
-  const [carModel, setCarModel] = useState("");
+  const dispatch = useDispatch();
+  const carModel = useSelector(store=>store.car.carModel);
+  
   const handleChange = (e)=>{
-    setCarModel(e.target.value);
+    dispatch(setCarModel(e.target.value));
+  }
 
-  }
   const handleCloseButton = ()=>{
-    setCarModel("");
+    dispatch(setCarModel(""));
   }
+
   const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log("enetered")
-
-
   }
 
   return (

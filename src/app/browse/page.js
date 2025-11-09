@@ -7,6 +7,6 @@ export default function BrowseCars(){
     return <div className="pt-25 flex flex-col gap-4">
         <SearchBar />
         <DynamicHeading3 />
-        <CarsList data = {data} />
+        <CarsList />
     </div>
 }

@@ -1,12 +1,19 @@
-// 'use client'
+"use client";
 import Image from "next/image";
-import { data } from "@/app/constant/list";
+// import { data } from "@/app/constant/list";
 import { carDetails } from "@/app/constant/details";
+import { useSelector } from "react-redux";
 
-export const CarsList = ({ data }) => {
+export const CarsList = () => {
+  const carsData = useSelector((store) => store.car.carsData);
+  const carModel = useSelector((store) => store.car.carModel);
+  console.log(carsData);
+  const filteredData = carsData.filter((item) => item.model.toLowerCase().includes(carModel.toLowerCase()));
+
+  
   return (
     <section className="w-full flex flex-wrap justify-center items-center gap-2">
-      {data.map((item) => (
+      {filteredData.map((item) => (
         <div
           className="w-[220px] h-[300px] lg:w-[250px] xl:w-[270] rounded-lg flex flex-col items-center bg-white"
           key={item.id}
@@ -44,7 +51,6 @@ export const CarsList = ({ data }) => {
                 <p className="hidden lg:block text-xs">Per month</p>
                 {item.discount_value > 0 && (
                   <p className="text-xs line-through text-orange-400">
-
                     {item.listing_price.toLocaleString("en-US", {
                       style: "currency",
                       currency: "AED",

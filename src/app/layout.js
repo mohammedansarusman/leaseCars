@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 
 import { NavigationBar } from "@/components/navigation-bar/NavigationBar";
 import { Providers } from "@/components/general/Providers";
+import { Footer } from "@/components/home-page/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"], // Required
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <Providers>
           {<NavigationBar/>}
           {children}
+          {<Footer />}
         </Providers>
           
         
