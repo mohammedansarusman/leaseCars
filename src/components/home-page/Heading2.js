@@ -4,6 +4,7 @@ import { sampleData } from "@/app/constant/sample";
 import Image from "next/image";
 import { DollarSign } from "lucide-react";
 import { CarsList } from "../browse/CarsList";
+import { SampleCars } from "../browse/SampleCars";
 
 export const Heading2 = () => {
   console.log(sampleData);
@@ -19,7 +20,7 @@ export const Heading2 = () => {
           </Link>
         </section>
       </header>
-      <CarsList data = {sampleData}/>
+      <SampleCars data={sampleData} />
     </div>
   );
 };

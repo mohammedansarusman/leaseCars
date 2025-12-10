@@ -3,10 +3,12 @@ import { data } from "../constant/list";
 import { DynamicHeading3 } from "@/components/home-page/DynamicHeading3";
 import { SearchBar } from "@/components/browse/SearchBar";
 
-export default function BrowseCars(){
-    return <div className="pt-25 flex flex-col gap-4">
-        <SearchBar />
-        <DynamicHeading3 />
-        <CarsList />
+export default function BrowseCars() {
+  return (
+    <div className="pt-25 flex flex-col gap-4">
+      <SearchBar />
+      <DynamicHeading3 />
+      <CarsList />
     </div>
+  );
 }
