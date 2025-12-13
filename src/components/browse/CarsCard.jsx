@@ -5,7 +5,7 @@ export const CarsCard = ({data}) => {
     const {img,discount_value,model,listing_price} = data;
   return (
     <div
-      className="w-[220px] h-[300px] lg:w-[250px] xl:w-[270] rounded-lg flex flex-col items-center bg-white"
+      className="w-[220px] h-[300px] lg:w-[250px] xl:w-[270] rounded-lg flex flex-col items-center border-2 border-blue-50"
     >
       <div className="h-1/2 w-full flex justify-center items-center">
         <Image

@@ -9,7 +9,7 @@ const MobileNavigationBar = ({setOpen}) => {
   ];
   const linkAddress = [
     "/browse",
-    "/how-it-works",
+    "/#how-it-works",
     "/faqs",
     "/blog",
     "/contact-us",
@@ -21,7 +21,7 @@ const MobileNavigationBar = ({setOpen}) => {
           {navHeadings.map((nav, index) => (
             <Link
               href={linkAddress[index]}
-              className="w-full border-b-1 border-gray-200"
+              className="w-full border-b border-gray-200"
               key={index}
               onClick={()=>setOpen(false)}
             >

@@ -13,7 +13,9 @@ export default function Home() {
       <div>
         <Heading1 /> 
         <Heading2 />
-        <Heading3 />
+        <div id="how-it-works">
+          <Heading3 />
+        </div>
         <CarouselBrands />
         <Heading4 />
         <Footer />
