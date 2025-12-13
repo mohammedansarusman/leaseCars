@@ -11,6 +11,7 @@ import {
 import { useState } from "react";
 import { FilterIcon } from "lucide-react";
 import { X } from "lucide-react";
+import { AccordionPrice } from "./AccordionPrice";
 export const FilterButton = () => {
   const [open, setOpen] = useState(false);
 
@@ -22,10 +23,11 @@ export const FilterButton = () => {
             <FilterIcon className="cursor-pointer" />
           </button>
         </SheetTrigger>
-        <SheetContent side="bottom" className="z-60 w-full h-screen sm:bg-amber-300 block md:hidden">
+        <SheetContent side="bottom" className="z-60 w-full h-screen block md:hidden">
           <SheetHeader>
             <SheetTitle></SheetTitle>
-            <div className="flex justify-between items-center px-2 text-md">
+            {/* Close button, filters and reset all */}
+            <div className="flex justify-between items-center px-2 text-md border-b border-gray-200 pb-4">
               <SheetClose asChild>
                 <button className="cursor-pointer">
                   <X size={25} />
@@ -34,6 +36,10 @@ export const FilterButton = () => {
               <h1 className="font-semibold text-gray-700">Filters</h1>
               <button className="font-semibold text-blue-500">Reset All</button>
             </div>
+            
+            {/* Accordion for Price */}
+            <AccordionPrice />
+
           </SheetHeader>
         </SheetContent>
       </Sheet>
