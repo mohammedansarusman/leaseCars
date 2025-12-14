@@ -12,6 +12,7 @@ import { useState } from "react";
 import { FilterIcon } from "lucide-react";
 import { X } from "lucide-react";
 import { AccordionPrice } from "./AccordionPrice";
+import { PriceSlider } from "./PriceSlider";
 export const FilterButton = () => {
   const [open, setOpen] = useState(false);
 
@@ -39,6 +40,8 @@ export const FilterButton = () => {
             
             {/* Accordion for Price */}
             <AccordionPrice />
+            {/* Price Slider  -  Minimum and Maximum price slider */}
+            <PriceSlider />
 
           </SheetHeader>
         </SheetContent>
