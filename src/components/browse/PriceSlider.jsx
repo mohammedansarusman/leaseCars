@@ -22,7 +22,7 @@ export const PriceSlider = () => {
       <Slider
         value={priceRange}
         min={1000}
-        max={100000}
+        max={20000}
         step={50}
         onValueChange={(value) => dispatch(setPriceRange(value))}
       />

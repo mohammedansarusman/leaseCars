@@ -7,15 +7,29 @@ import {
 } from "../ui/accordion";
 import { useSelector, useDispatch } from "react-redux";
 import { setPriceRange } from "@/store/carsSlice";
+import { useEffect } from "react";
 
 export const AccordionPrice = () => {
   const priceRange = useSelector((store) => store.car.priceRange);
   const dispatch = useDispatch();
+  useEffect(()=>{
+    console.log("mount")
+    const timeOut = setTimeout(()=>{
+      console.log("after 2 seconds", priceRange[0])
+      priceRange[0]<1000 && dispatch(setPriceRange([1000, priceRange[1]]));
+      (priceRange[1]>20000 || priceRange[1]<priceRange[0]) && dispatch(setPriceRange([priceRange[0], 20000]));  
+
+    },1000)
+    return ()=>{
+      console.log("un mount")
+      clearTimeout(timeOut);
+    }
+  },[priceRange])
 
   const handlePriceChange = (e) => {
     if (e.target.name === "min-price") {
       const rawValue = e.target.value.replace(/,/g, "")
-      dispatch(setPriceRange([Number(rawValue), priceRange[1]]));
+        dispatch(setPriceRange([Number(rawValue), priceRange[1]]));
     }
     if (e.target.name === "max-price") {
       const rawValue = e.target.value.replace(/,/g, "")

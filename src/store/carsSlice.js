@@ -6,7 +6,7 @@ const carsSlice = createSlice({
   initialState: {
     carsData: data,
     carModel: "",
-    priceRange: [1000, 100000],
+    priceRange: [1000, 20000],
   },
   reducers: {
     setCarModel: (state, action) => {
