@@ -1,4 +1,5 @@
 import React from "react";
+import { PriceSlider } from "./PriceSlider";
 import {
   Accordion,
   AccordionContent,
@@ -13,26 +14,23 @@ export const AccordionPrice = () => {
   const priceRange = useSelector((store) => store.car.priceRange);
   const dispatch = useDispatch();
   useEffect(()=>{
-    console.log("mount")
     const timeOut = setTimeout(()=>{
-      console.log("after 2 seconds", priceRange[0])
       priceRange[0]<1000 && dispatch(setPriceRange([1000, priceRange[1]]));
       (priceRange[1]>20000 || priceRange[1]<priceRange[0]) && dispatch(setPriceRange([priceRange[0], 20000]));  
 
     },1000)
     return ()=>{
-      console.log("un mount")
       clearTimeout(timeOut);
     }
   },[priceRange])
 
   const handlePriceChange = (e) => {
     if (e.target.name === "min-price") {
-      const rawValue = e.target.value.replace(/,/g, "")
+      const rawValue = e.target.value.replace(/[^0-9]/g, "")
         dispatch(setPriceRange([Number(rawValue), priceRange[1]]));
     }
     if (e.target.name === "max-price") {
-      const rawValue = e.target.value.replace(/,/g, "")
+      const rawValue = e.target.value.replace(/[^0-9]/g, "")
       dispatch(setPriceRange([priceRange[0], Number(rawValue)]));
     }
   };
@@ -53,6 +51,7 @@ export const AccordionPrice = () => {
                 <input
                   type="text"
                   name="min-price"
+                  inputMode="numeric"
                   value={priceRange[0].toLocaleString()}
                   onChange={(e) => handlePriceChange(e)}
                   className="border-none outline-1 outline-gray-300 rounded-sm hover:outline-blue-400 h-10 focus:ring-2 focus:ring-blue-600 w-1/2 px-2"
@@ -65,6 +64,8 @@ export const AccordionPrice = () => {
                   className="border-none outline-1 outline-gray-300 rounded-sm hover:outline-blue-400 h-10 focus:ring-2 focus:ring-blue-600 w-1/2 px-2"
                 />
               </section>
+              {/* Price Slider  -  Minimum and Maximum price slider */}
+              <PriceSlider />
             </div>
           </AccordionContent>
         </AccordionItem>

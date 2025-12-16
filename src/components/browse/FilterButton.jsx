@@ -24,7 +24,10 @@ export const FilterButton = () => {
             <FilterIcon className="cursor-pointer" />
           </button>
         </SheetTrigger>
-        <SheetContent side="bottom" className="z-60 w-full h-screen block md:hidden">
+        <SheetContent
+          side="bottom"
+          className="z-60 w-full h-screen block md:hidden"
+        >
           <SheetHeader>
             <SheetTitle></SheetTitle>
             {/* Close button, filters and reset all */}
@@ -37,12 +40,9 @@ export const FilterButton = () => {
               <h1 className="font-semibold text-gray-700">Filters</h1>
               <button className="font-semibold text-blue-500">Reset All</button>
             </div>
-            
+
             {/* Accordion for Price */}
             <AccordionPrice />
-            {/* Price Slider  -  Minimum and Maximum price slider */}
-            <PriceSlider />
-
           </SheetHeader>
         </SheetContent>
       </Sheet>
