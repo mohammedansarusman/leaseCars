@@ -12,9 +12,12 @@ import { useState } from "react";
 import { FilterIcon } from "lucide-react";
 import { X } from "lucide-react";
 import { AccordionPrice } from "./AccordionPrice";
-import { PriceSlider } from "./PriceSlider";
+import { FilterOffers } from "./FilterOffers";
+import { data } from "@/app/constant/list";
 export const FilterButton = () => {
   const [open, setOpen] = useState(false);
+  const brands = data.map(item => item.brand_value)
+  const uniqueBrands = [... new Set(brands)]
 
   return (
     <div className="block md:hidden">
@@ -38,11 +41,16 @@ export const FilterButton = () => {
                 </button>
               </SheetClose>
               <h1 className="font-semibold text-gray-700">Filters</h1>
-              <button className="font-semibold text-blue-500">Reset All</button>
+              <button className="font-semibold text-sky-800">Reset All</button>
             </div>
 
             {/* Accordion for Price */}
             <AccordionPrice />
+            {/* Offers toggle button */}
+            <FilterOffers />
+            {/*  */}
+            {console.log("data===>",uniqueBrands)}
+            {/*  */}
           </SheetHeader>
         </SheetContent>
       </Sheet>
