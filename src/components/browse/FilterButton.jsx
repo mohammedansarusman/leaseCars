@@ -14,11 +14,10 @@ import { X } from "lucide-react";
 import { AccordionPrice } from "./AccordionPrice";
 import { FilterOffers } from "./FilterOffers";
 import { data } from "@/app/constant/list";
+import { AccordionMake } from "./AccordionMake";
 export const FilterButton = () => {
   const [open, setOpen] = useState(false);
-  const brands = data.map(item => item.brand_value)
-  const uniqueBrands = [... new Set(brands)]
-
+  
   return (
     <div className="block md:hidden">
       <Sheet open={open} onOpenChange={setOpen}>
@@ -49,8 +48,8 @@ export const FilterButton = () => {
             {/* Offers toggle button */}
             <FilterOffers />
             {/*  */}
-            {console.log("data===>",uniqueBrands)}
-            {/*  */}
+            {/* Accordiaon for Car Make */}
+            <AccordionMake />
           </SheetHeader>
         </SheetContent>
       </Sheet>
