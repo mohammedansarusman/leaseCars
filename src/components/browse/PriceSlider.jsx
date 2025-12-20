@@ -2,10 +2,28 @@
 import { setPriceRange } from "@/store/carsSlice";
 import { Slider } from "../ui/slider";
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const PriceSlider = () => {
+  // priceRange is an array of min rate and mx rate [1000,20000 ]
   const priceRange = useSelector((store) => store.car.priceRange);
   const dispatch = useDispatch();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  
+  const handleChange = (value)=>{
+    dispatch(setPriceRange(value))
+  }
+  useEffect(()=>{
+    const params = new URLSearchParams(searchParams);
+    params.append("minprice",priceRange[0])
+    params.append("maxprice",priceRange[1])
+    router.push(`?${params}`)
+    console.log("router",router)
+
+     console.log("params in Slider=>",params) 
+  },[priceRange])
 
   return (
     <div className="w-full flex flex-col items-center px- py-4 pb-5 gap-2">
@@ -27,7 +45,7 @@ export const PriceSlider = () => {
         min={1000}
         max={20000}
         step={50}
-        onValueChange={(value) => dispatch(setPriceRange(value))}
+        onValueChange={(value) => handleChange(value)}
         className="
           [&_.bg-secondary]:bg-red-500
           [&_.bg-primary]:bg-sky-800

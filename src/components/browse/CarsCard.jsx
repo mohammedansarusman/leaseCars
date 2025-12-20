@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export const CarsCard = ({data}) => {
-    console.log("item=>",data)  
     const {img,discount_value,model,listing_price} = data;
   return (
     <div
