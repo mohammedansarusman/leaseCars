@@ -8,6 +8,7 @@ const carsSlice = createSlice({
     carModel: "",
     priceRange: [1000, 20000],
     brands:[],
+    filterData:[],
   },
   reducers: {
     setCarModel: (state, action) => {
@@ -19,8 +20,11 @@ const carsSlice = createSlice({
     setBrands:(state,action)=>{
       state.brands = action.payload;
     },
+    setFilterData:(state,action)=>{
+      state.filterData = action.payload;
+    },
   },
 });
 
 export default carsSlice.reducer;
-export const { setCarModel, setPriceRange, setBrands } = carsSlice.actions;
+export const { setCarModel, setPriceRange, setBrands, setFilterData } = carsSlice.actions;

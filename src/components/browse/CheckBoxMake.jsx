@@ -24,12 +24,12 @@ export const CheckBoxMake = () => {
       ? dispatch(setBrands(brands.filter((item) => item !== brand)))
       : dispatch(setBrands([...brands, brand])); /* click on any car brand then tick on and checked will be true */
   };
-  useEffect(()=>{
-    const params = new URLSearchParams(searchParams);
-    brands.map((item)=>params.append("brand",item))
-    router.push(`?${params}`)
+  // useEffect(()=>{
+  //   const params = new URLSearchParams(searchParams);
+  //   brands.map((item)=>params.append("brand",item))
+  //   router.push(`?${params}`)
 
-  },[brands])
+  // },[brands])
 
   return (
     <div className="w-full bg-blue-200">

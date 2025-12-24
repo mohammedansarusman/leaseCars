@@ -1,28 +1,33 @@
 "use client";
 import Image from "next/image";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { CarsCard } from "./CarsCard";
-import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { setFilterData } from "@/store/carsSlice";
 
 export const CarsList = () => {
+  const dispatch = useDispatch();
   const carsData = useSelector((store) => store.car.carsData);
   const carModel = useSelector((store) => store.car.carModel);
-  const searchParams = useSearchParams();
-  const brandParam = searchParams.getAll('brand');
+  const filterData = useSelector((store) => store.car.filterData);
+  const priceRange = useSelector((store) => store.car.priceRange);
 
-  const filteredData = carsData.filter((item) => item.model.toLowerCase().includes(carModel.toLowerCase()));
-  const brandFilter = brandParam.length === 0 
-    ? filteredData
-    : filteredData.filter((item)=>brandParam.includes(item.brand_value))
+  useEffect(() => {
+    const data = carsData.filter(
+      (item) =>
+        item?.listing_price > priceRange[0] &&
+        item?.listing_price <= priceRange[1]
+    );
+    dispatch(setFilterData(data))
     
+  }, [priceRange]);
 
-  console.log("filteredData",filteredData)
-  
   return (
     <section className="w-full flex flex-wrap justify-center items-center gap-2">
-      {brandFilter.map((item) => (
-        <CarsCard data = {item} key={item.id}/>
+      {filterData.map((item) => (
+        <CarsCard data={item} key={item.id} />
       ))}
+      {filterData.length===0 && <h1>Item not found</h1>}
     </section>
   );
 };

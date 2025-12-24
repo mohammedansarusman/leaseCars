@@ -1,14 +1,23 @@
 "use client";
 import { Search, X } from "lucide-react";
-import React from "react";
+import {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCarModel } from "@/store/carsSlice";
+import { setCarModel, setFilterData } from "@/store/carsSlice";
 
 export const SearchBar = () => {
   const dispatch = useDispatch();
   const carModel = useSelector(store=>store.car.carModel);
+  const carsData = useSelector((store) => store.car.carsData);
+  
+  useEffect(()=>{
+    if(!carModel){
+      dispatch(setFilterData(carsData))
+    }
+  },[carModel])
   
   const handleChange = (e)=>{
+    const data = carsData.filter(item=>item.model.toLowerCase().includes(e.target.value.toLowerCase()))
+    dispatch(setFilterData(data))
     dispatch(setCarModel(e.target.value));
   }
 
