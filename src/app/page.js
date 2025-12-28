@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <CarouselBrands />
         <Heading4 />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

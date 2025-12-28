@@ -5,7 +5,7 @@ const carsSlice = createSlice({
   name: "car",
   initialState: {
     carsData: data,
-    carModel: "",
+    carModel:"",
     priceRange: [1000, 20000],
     brands:[],
     filterData:[],
