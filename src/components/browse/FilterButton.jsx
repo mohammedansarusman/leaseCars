@@ -15,9 +15,19 @@ import { AccordionPrice } from "./AccordionPrice";
 import { FilterOffers } from "./FilterOffers";
 import { data } from "@/app/constant/list";
 import { AccordionMake } from "./AccordionMake";
+import { useDispatch } from "react-redux";
+import { setBrands, setPriceRange } from "@/store/carsSlice";
+import { setEnabled } from "@/store/themeSlice";
 export const FilterButton = () => {
   const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
   
+  const handleClick = () =>{
+    dispatch(setPriceRange([1000,20000]));
+    dispatch(setBrands([]));
+    dispatch(setEnabled(false))
+
+  }
   return (
     <div className="block md:hidden">
       <Sheet open={open} onOpenChange={setOpen}>
@@ -40,7 +50,7 @@ export const FilterButton = () => {
                 </button>
               </SheetClose>
               <h1 className="font-semibold text-gray-700">Filters</h1>
-              <button className="font-semibold text-sky-800">Reset All</button>
+              <button className="font-semibold text-sky-800" onClick={handleClick}>Reset All</button>
             </div>
 
             {/* Accordion for Price */}
