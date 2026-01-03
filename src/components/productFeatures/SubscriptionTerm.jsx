@@ -26,9 +26,6 @@ export const SubscriptionTerm = ({ pricing }) => {
       })
     );
   };
-
-  console.log("pricing=>", pricing);
-
   return (
     <div className="w-full px-5">
       <h1 className="text-base font-semibold opacity-80">Subscription Terms</h1>

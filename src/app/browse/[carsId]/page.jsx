@@ -5,6 +5,8 @@ import { Specification } from "@/components/productFeatures/Specification";
 import { LocationsDropDown } from "@/components/productFeatures/LocationsDropDown";
 import { SubscriptionTerm } from "@/components/productFeatures/SubscriptionTerm";
 import { Benefits } from "@/components/productFeatures/Benefits";
+import { Features } from "@/components/productFeatures/Features";
+
 export default async function CarDetailsPage({ params }) {
   const {carsId} = await params;
   const carFeatures = carDetails.find(
@@ -14,8 +16,7 @@ export default async function CarDetailsPage({ params }) {
   if (!carFeatures) {
     notFound();
   }
-  const { brand, model, media, specifications, cities, pricing } = carFeatures;
-  console.log("media=>", media);
+  const { brand, model, media, specifications, cities, pricing, features } = carFeatures;
 
   return (
     <div className="pt-25 flex flex-col gap-4 w-full items-center">
@@ -33,7 +34,8 @@ export default async function CarDetailsPage({ params }) {
       <SubscriptionTerm pricing = {pricing} />
       {/* Benefits */}
       <Benefits />
-
+      {/* Additional Features */}
+      <Features features = {features}/>
 
     </div>
   );
