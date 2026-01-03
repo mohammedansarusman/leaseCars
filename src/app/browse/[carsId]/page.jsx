@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { ImageCarousel } from "@/components/productFeatures/ImageCarousel";
 import { Specification } from "@/components/productFeatures/Specification";
 import { LocationsDropDown } from "@/components/productFeatures/LocationsDropDown";
-
+import { SubscriptionTerm } from "@/components/productFeatures/SubscriptionTerm";
+import { Benefits } from "@/components/productFeatures/Benefits";
 export default async function CarDetailsPage({ params }) {
   const {carsId} = await params;
   const carFeatures = carDetails.find(
@@ -13,7 +14,7 @@ export default async function CarDetailsPage({ params }) {
   if (!carFeatures) {
     notFound();
   }
-  const { brand, model, media, specifications, cities } = carFeatures;
+  const { brand, model, media, specifications, cities, pricing } = carFeatures;
   console.log("media=>", media);
 
   return (
@@ -28,6 +29,11 @@ export default async function CarDetailsPage({ params }) {
       <Specification specifications = {specifications}/>
       {/* select location */}
       <LocationsDropDown cities = {cities}/>
+      {/* Subscription Term */}
+      <SubscriptionTerm pricing = {pricing} />
+      {/* Benefits */}
+      <Benefits />
+
 
     </div>
   );

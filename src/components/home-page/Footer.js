@@ -49,7 +49,7 @@ export const Footer = () => {
           <InstagramIcon />
         </div>
       </div>
-      <div className="flex gap-1">
+      <div className="flex gap-1 pb-15">
         <CopyrightIcon />
         <p>Car Lease Holding LTD</p>
       </div>

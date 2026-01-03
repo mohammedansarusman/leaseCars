@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/carousel";
 
 
-export const ImageCarousel = ({brand,model,media}) => {
+export const ImageCarousel = ({media}) => {
   return (
     <div className="w-80/100 h-[425px] flex justify-center items-center">
         <Carousel className="w-full h-3/4 flex justify-center items-center">
           <CarouselContent>
             {media.map((images, index) => (
               <CarouselItem key={index}>
-                <div className="h-[200px] flex">
+                <div className="h-[230px] flex">
                   <Image
                     width={1000}
                     height={1000}
