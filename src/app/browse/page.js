@@ -7,13 +7,13 @@ import { FilterWiderScreen } from "@/components/browse/FilterWiderScreen";
 
 export default function BrowseCars() {
   return (
-    <div className="pt-25 flex flex-col gap-4 px-3">
+    <div className="pt-25 flex flex-col gap-4 px-3 bg-gray-50">
       <aside className="flex justify-between items-center px-4">
         <SearchBar />
         <FilterButton/>
       </aside>
       <DynamicHeading3 />
-      <div className="w-full lg:flex lg:flex-row">
+      <div className="w-full min-h-screen lg:flex lg:flex-row ">
         <FilterWiderScreen />
         <CarsList />
       </div>

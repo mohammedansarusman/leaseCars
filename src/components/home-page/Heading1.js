@@ -7,7 +7,7 @@ export const Heading1 = () => {
   return (
     <div className="w-full py-14 px-10 flex flex-col md:flex-row">
       {/* Cars made Easy ... Heading */}
-      <div className="sm:bg-red-400 md:bg-green-300 lg:bg-pink-500 xl:bg-amber-300 md:w-1/2 md:py-8 lg:py-10 xl:py-15 
+      <div className=" md:w-1/2 md:py-8 lg:py-10 xl:py-15 
       flex flex-col gap-5 lg:gap-10">
         <header className="text-3xl font-extrabold tracking-wide text-gray-600">
           Cars Made Easy - The New Way to Drive Cars

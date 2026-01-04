@@ -6,7 +6,7 @@ import { SampleCars } from "../browse/SampleCars";
 export const Heading2 = () => {
   return (
     <div className="w-full py-10 px-5 gap-4 flex flex-col ">
-      <header className="flex justify-between items-start gap-3 h-[50px] bg-amber-300">
+      <header className="flex justify-between items-start gap-3 h-[50px]">
         <section className="w-[80%] text-xl font-semibold text-gray-600">
           Find Your Perfect Car in Dubai & the UAE
         </section>

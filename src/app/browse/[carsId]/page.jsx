@@ -19,7 +19,7 @@ export default async function CarDetailsPage({ params }) {
   const { brand, model, media, specifications, cities, pricing, features } = carFeatures;
 
   return (
-    <div className="pt-25 flex flex-col gap-4 w-full items-center">
+    <div className="pt-25 flex flex-col gap-4 w-full items-center sm:bg-blue-300 md:bg-blue-500 lg:bg-pink-400">
       {/* heading -  brand and model name */}
       <div className="text-left w-full pl-5">
         <h1 className="text-2xl font-bold opacity-80">{brand + " " + model}</h1>

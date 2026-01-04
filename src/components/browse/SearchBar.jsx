@@ -30,7 +30,9 @@ export const SearchBar = () => {
   }
 
   return (
-    <div className="w-[80%] h-12 rounded-lg ml-2 flex items-center outline-1 outline-gray-300 focus:outline-1 focus-within:outline-blue-500">
+    <div className="w-[80%] h-12 rounded-lg ml-2 flex items-center 
+    outline-1 outline-gray-300 focus:outline-1 focus-within:outline-blue-500
+    lg:w-1/2">
       <section className="w-1/10 h-full flex  items-center justify-center">
         <Search />
       </section>

@@ -37,7 +37,7 @@ export const CarsList = () => {
   }, [priceRange, brands, enabled]);
 
   return (
-    <section className="w-full flex flex-wrap justify-center items-center gap-2 lg:w-[60%]">
+    <section className="w-full flex flex-wrap justify-center items-start gap-2 lg:w-[60%] xl:w-[70%]">
       {filterData.map((item) => (
         <Link href={`/browse/${item.id}`} key={item.id}>
           <CarsCard data={item}  />
