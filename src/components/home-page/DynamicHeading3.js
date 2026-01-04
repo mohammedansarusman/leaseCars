@@ -29,7 +29,7 @@ export const DynamicHeading3 = () => {
 
   return (
     <div
-      className={`w-full h-[150px] sm:h-[200px] md:h-[220px] lg:h-[300] xl:h-[350px] 2xl:h-[400px] relative ${bruno.className} rounded-full`}
+      className={`w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[300] xl:h-[350px] 2xl:h-[400px] relative ${bruno.className} rounded-full`}
     >
       <Image
         src="/howitWorks.jpg"
@@ -41,8 +41,7 @@ export const DynamicHeading3 = () => {
       <h1
         className="absolute top-5 left-5 text-xs text-white  bg-gray-500 px-1 py-1
         md:text-md md:px-2 md:py-2
-        lg:text-lg
-        "
+        lg:text-lg"
       >
         {banner}
       </h1>

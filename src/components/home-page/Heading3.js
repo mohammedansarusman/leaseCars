@@ -1,6 +1,7 @@
 import React from "react";
 import { ButtonGeneral } from "../general/ButtonGeneral";
 import { DynamicHeading3 } from "./DynamicHeading3";
+import Link from "next/link";
 
 export const Heading3 = () => {
   return (
@@ -16,7 +17,9 @@ export const Heading3 = () => {
       <p className="font-bold text-xl">Drive and Decide</p>
       <p>Enjoy the freedom to drive on your terms. At the end of your subscription, return the car, renew, or switch to a new model – it’s up to you.</p>
       <footer className="flex justify-center">
-        <ButtonGeneral value = "Find My Car"/>
+        <Link href={"/browse"}>
+          <ButtonGeneral value = "Find My Car"/>
+        </Link>
       </footer>
     </div>
   );

@@ -23,7 +23,7 @@ export const CheckBoxMake = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-2 bg-white">
+    <div className="w-full flex flex-col gap-2 bg-white ">
       {uniqueBrands.map((brand) => (
         <div key={brand} className="flex gap-4">
           <Checkbox

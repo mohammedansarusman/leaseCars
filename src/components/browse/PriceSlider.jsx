@@ -13,7 +13,7 @@ export const PriceSlider = () => {
   }
   
   return (
-    <div className="w-full flex flex-col items-center px- py-4 pb-5 gap-2">
+    <div className="w-full flex flex-col items-center px-2 py-4 pb-5 gap-2">
       <section className="w-full flex justify-between items-center">
         {/* minimum price heading */}
         <aside className="flex gap-2">

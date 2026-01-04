@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonGeneral } from "../general/ButtonGeneral";
+import Link from "next/link";
 
 export const Heading4 = () => {
   return (
@@ -11,8 +12,10 @@ export const Heading4 = () => {
       <p className="font-light">Get behind the wheel of a brand-new car without the long-term commitments, down payments, or loans. Car Lease offers a flexible, all-inclusive subscription that covers everything from insurance to maintenance, letting you enjoy the latest models with zero hassle.</p>
       {/* <p className="font-bold text-xl">Ready in No Time</p> */}
       <p className="font-light">With Car Lease, you’ll experience the freedom to drive a new car on your terms, while avoiding the stress and financial burden of traditional ownership. Join thousands of happy Car Lease customers who have made the switch to an easier, more enjoyable way to drive.</p>
-      <footer className="flex justify-center">
-        <ButtonGeneral value = "Find My Car"/>
+      <footer className="flex justify-center gap-2">
+        <Link href={"/browse"}>
+          <ButtonGeneral value = "Find My Car"/>
+        </Link>
         <ButtonGeneral value = "Contact Us"/>
       </footer>
     </div>

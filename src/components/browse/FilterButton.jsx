@@ -29,7 +29,7 @@ export const FilterButton = () => {
 
   }
   return (
-    <div className="block md:hidden">
+    <div className="block lg:hidden">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <button>
@@ -38,7 +38,7 @@ export const FilterButton = () => {
         </SheetTrigger>
         <SheetContent
           side="bottom"
-          className="z-60 w-full h-screen block md:hidden"
+          className="z-60 w-full h-screen block lg:hidden"
         >
           <SheetHeader>
             <SheetTitle></SheetTitle>

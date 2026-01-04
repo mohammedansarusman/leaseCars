@@ -15,7 +15,7 @@ export const AccordionMake = () => {
         type="single"
         // defaultValue="item-1"
         collapsible
-        className="w-full border-b border-gray-200"
+        className="w-full border-b border-gray-200 px-2"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger className="px-1 hover:no-underline text-base font-semibold text-gray-700">

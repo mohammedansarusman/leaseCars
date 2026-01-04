@@ -21,7 +21,7 @@ export const AccordionFeature = ({ item }) => {
       </div>
       {/* Accordion content  */}
       {display && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-2">
           {item.feature_group_items.map((things) => (
             <h1
               key={things.id}
