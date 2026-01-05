@@ -6,9 +6,10 @@ import { LocationsDropDown } from "@/components/productFeatures/LocationsDropDow
 import { SubscriptionTerm } from "@/components/productFeatures/SubscriptionTerm";
 import { Benefits } from "@/components/productFeatures/Benefits";
 import { Features } from "@/components/productFeatures/Features";
+import { SummaryPriceDuration } from "@/components/productFeatures/SummaryPriceDuration";
 
 export default async function CarDetailsPage({ params }) {
-  const {carsId} = await params;
+  const { carsId } = await params;
   const carFeatures = carDetails.find(
     (car) => car.variant_id == Number(carsId)
   );
@@ -16,27 +17,39 @@ export default async function CarDetailsPage({ params }) {
   if (!carFeatures) {
     notFound();
   }
-  const { brand, model, media, specifications, cities, pricing, features } = carFeatures;
+  const { brand, model, media, specifications, cities, pricing, features } =
+    carFeatures;
 
   return (
-    <div className="pt-25 flex flex-col gap-4 w-full items-center sm:bg-blue-300 md:bg-blue-500 lg:bg-pink-400">
+    <div className="pt-25 flex flex-col gap-4 w-full items-center">
       {/* heading -  brand and model name */}
-      <div className="text-left w-full pl-5">
+      <div className="block text-left w-full pl-5 lg:hidden">
         <h1 className="text-2xl font-bold opacity-80">{brand + " " + model}</h1>
       </div>
-      {/* Image Carousel */}
-      <ImageCarousel brand={brand} model={model} media={media}/>
-      {/* specifications */}
-      <Specification specifications = {specifications}/>
-      {/* select location */}
-      <LocationsDropDown cities = {cities}/>
-      {/* Subscription Term */}
-      <SubscriptionTerm pricing = {pricing} />
+      <div className="w-full flex flex-col lg:flex-row">
+        <div className="w-full flex flex-col items-center lg:w-1/2">
+          {/* Image Carousel */}
+          <ImageCarousel brand={brand} model={model} media={media} />
+          {/* specifications */}
+          <Specification specifications={specifications} />
+        </div>
+        <div className="w-full mt-5 lg:mt-0 flex flex-col gap-5 lg:w-1/2">
+          <div className="hidden text-left w-full pl-5 lg:block">
+            <h1 className="text-2xl font-bold opacity-80">{brand + " " + model}</h1>
+          </div>
+          <LocationsDropDown cities={cities} />
+          {/* Subscription Term */}
+          <SubscriptionTerm pricing={pricing} />
+          <div className="hidden w-full md:block px-2">
+            <SummaryPriceDuration />
+          </div>
+        </div>
+      </div>
+      
       {/* Benefits */}
       <Benefits />
       {/* Additional Features */}
-      <Features features = {features}/>
-
+      <Features features={features} />
     </div>
   );
 }

@@ -15,7 +15,7 @@ export const ImageCarousel = ({media}) => {
           <CarouselContent>
             {media.map((images, index) => (
               <CarouselItem key={index}>
-                <div className="h-[250px] flex sm:h-[300px] md:h-[350px]">
+                <div className="h-[250px] flex sm:h-[300px] md:h-[350px] lg:h-[300px]">
                   <Image
                     width={1000}
                     height={1000}

@@ -12,7 +12,7 @@ export const SummaryPriceDuration = () => {
           <h1 className="text-base">{`AED ${price}`}<span className="font-light">/Month</span></h1>
         </div>
         <div className="w-1/2 flex justify-end px-5">
-          <Button className="bg-sky-700 text-white hover:bg-sky-800">Continue</Button>
+          <Button className="bg-sky-700 text-white hover:bg-sky-800 md:w-4/4">Continue</Button>
         </div>
         
     </div>

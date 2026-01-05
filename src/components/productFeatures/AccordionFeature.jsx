@@ -7,7 +7,7 @@ export const AccordionFeature = ({ item }) => {
     setDisplay((prev)=>!prev)
   }
   return (
-    <div>
+    <div className="">
       {/* heading and +/- sign for accordion  */}
       <div className="flex items-center justify-between mt-10">
         <h1 className="text-md opacity-80">{item.feature_group_name}</h1>
