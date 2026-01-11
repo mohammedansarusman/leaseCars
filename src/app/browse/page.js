@@ -13,7 +13,7 @@ export default function BrowseCars() {
         <FilterButton/>
       </aside>
       <DynamicHeading3 />
-      <div className="w-full min-h-screen lg:flex lg:flex-row ">
+      <div className="w-full lg:flex lg:flex-row min-h-2/3">
         <FilterWiderScreen />
         <CarsList />
       </div>

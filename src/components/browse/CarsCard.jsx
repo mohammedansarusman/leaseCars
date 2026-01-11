@@ -4,16 +4,16 @@ export const CarsCard = ({data}) => {
     const {img,discount_value,model,listing_price} = data;
   return (
     <div
-      className="w-[220px] h-[300px] lg:w-[250px] xl:w-[270] rounded-lg flex flex-col items-center border-2 border-blue-50 cursor-pointer"
+      className="w-[220px] h-[300px] lg:w-[250px] xl:w-[270px] rounded-lg flex flex-col items-center border-2 border-blue-50 cursor-pointer"
     >
       <div className="h-1/2 w-full flex justify-center items-center hover:scale-105 transition-all duration-300">
         <Image
           src={img}
           width={200}
           height={300}
-          objectFit="contain"
+          // objectFit="contain"
           alt="car-pic"
-          className="lg:w-[250px]"
+          className="lg:w-[250px] object-contain"
         />
       </div>
       <div className="h-1/2 w-full  px-2 py-10 flex flex-col items-start gap-2 relative">
