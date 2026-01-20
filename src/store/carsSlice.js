@@ -37,7 +37,6 @@ const carsSlice = createSlice({
     },
     setFields:(state,action)=>{
       state.fields = action.payload;
-      
     }
   },
 });
