@@ -25,7 +25,10 @@ export const SignUpPage = () => {
     event.preventDefault();
     isFormValidOnSubmit();
     // handle form submission logic here
-    console.log("Form submitted");
+    if(!errorMessage.firstName && !errorMessage.lastName){
+      console.log("Form submitted");
+
+    }
   };
   const handleChange = (event) => {
     const { name, value } = event?.target;
@@ -34,9 +37,8 @@ export const SignUpPage = () => {
       [name]: value,
     }));
   }
-  const handleMobileChange = (value,country) => {
-    console.log("Selected country: ", country.dialCode.length);
-    console.log("Mobile number changed to: ", value);
+  const handleMobileChange = (value) => {
+    
     setFields((prevFields) => ({
       ...prevFields,
       mobile: value,
@@ -97,13 +99,15 @@ export const SignUpPage = () => {
       [name]: message,
     }));
   }
-  const isMobileValidOnBlur = (event) => {
-    console.log("Mobile field blurred",event.target.value.length);
-    const { mobile } = fields;
+  const isMobileValidOnBlur = (event,country) => {
+    const {value} = event.target;
+    const length = country.dialCode.length;
+    const cleanMobileNo = value.replace(/\+|\s/g, "").length;
+    const result = cleanMobileNo-length
     let message = "";
 
-    if(!mobile.trim()) {
-      message = "Mobile number is required";
+    if(result<8) {
+      message = "Mobile number is required minimum 8 digits";
     }
 
     setErrorMessage((prev) => ({
@@ -119,7 +123,7 @@ export const SignUpPage = () => {
       <Heading />
       {/* form contents */}
       <form
-        className="py-10 px-6 grid grid-cols-1 gap-4 opacity-70"
+        className="py-10 px-6 grid grid-cols-1 opacity-90 md:gap-1"
         onSubmit={handleSubmit}
         noValidate
         autoComplete="off"
@@ -187,9 +191,9 @@ export const SignUpPage = () => {
           message = {errorMessage.password}
         />
         <button
-          className="w-20 h-10 bg-sky-700 text-white transition-colors duration-300 mt-10"
+          className="w-20 h-10 bg-sky-700 text-white hover:bg-sky-900 cursor-pointer
+          transition-colors duration-300 mt-10"
           type="submit"
-          // disabled={!registerButton}
         >
           Register
         </button>
