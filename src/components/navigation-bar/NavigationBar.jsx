@@ -1,8 +1,9 @@
-"use client";
+// "use client";
 import { Heading } from "./Heading";
 import Link from "next/link";
 import { ResponsiveNavBar } from "./ResponsiveNavBar";
 import { HamburgerMenu } from "./HamburgerMenu";
+import { User } from "./User";
 
 export const NavigationBar = () => {
   return (
@@ -24,9 +25,10 @@ export const NavigationBar = () => {
                 <li>Browse Cars</li>
               </Link>
               <li>How it works</li>
-              <li>FAQs</li>
-              <li>Blog</li>
+              {/* <li>FAQs</li>
+              <li>Blog</li> */}
               <li>Contact us</li>
+              <li><User /></li>
             </ul>
           </div>
           {/* Hamburger menu click  */}

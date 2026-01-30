@@ -6,6 +6,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'carasti-operations.s3.ap-south-1.amazonaws.com'
+      },
+      {
+        hostname: 'lh3.googleusercontent.com',
+        protocol: 'https',
       }
     ]
 
