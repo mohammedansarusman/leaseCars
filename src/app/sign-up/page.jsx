@@ -1,8 +1,16 @@
 
 import { SignUpPage } from "@/components/signInOut/SignUpPage";
 import Image from "next/image";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
-export default function SignPage() {
+
+
+export default async function SignPage() {
+  const session = await auth();
+  if (session?.user) {
+    redirect("/payment");
+  }
   return (
     <div className="pt-20 w-full bg-gray-50 grid grid-cols-1 md:grid-cols-2 items-start px-10 gap-5">
       {/* Image */}

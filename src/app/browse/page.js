@@ -5,7 +5,8 @@ import { SearchBar } from "@/components/browse/SearchBar";
 import { FilterButton } from "@/components/browse/FilterButton";
 import { FilterWiderScreen } from "@/components/browse/FilterWiderScreen";
 
-export default function BrowseCars() {
+export default async function BrowseCars() {
+  
   return (
     <div className="pt-25 flex flex-col gap-4 px-3 bg-gray-50">
       <aside className="flex justify-between items-center px-4">

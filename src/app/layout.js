@@ -6,6 +6,7 @@ import { NavigationBar } from "@/components/navigation-bar/NavigationBar";
 import { Providers } from "@/components/general/Providers";
 import { Footer } from "@/components/home-page/Footer";
 
+
 const roboto = Roboto({
   subsets: ["latin"], // Required
   weight: ["400", "700"], // Optional

@@ -1,8 +1,17 @@
 import Image from "next/image";
 import { SignIn } from "@/components/signInOut/SignIn";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 
-export default function SignInPage() {
+
+
+export default async function SignInPage() {
+  const session = await auth();
+  console.log("Session in sign-in page:", session?.user);
+  if(session?.user){ 
+      redirect("/");
+  }
   return (
     <div className="pt-20 w-full bg-gray-50 grid grid-cols-1 md:grid-cols-2 items-start px-10 gap-5">
       {/* Image */}
