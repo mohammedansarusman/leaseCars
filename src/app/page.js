@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Heading } from "@/components/navigation-bar/Heading";
 import { Heading1 } from "@/components/home-page/Heading1";
 import { Heading2 } from "@/components/home-page/Heading2";
