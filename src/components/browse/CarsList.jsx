@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { CarsCard } from "./CarsCard";
 import { useEffect } from "react";
 import { setFilterData } from "@/store/carsSlice";
+import { NoItemsFound } from "./NoItemsFound";
 // import { Link } from "next/link";
 import Link from "next/link";
 
@@ -43,7 +44,7 @@ export const CarsList = () => {
           <CarsCard data={item}  />
         </Link>
       ))}
-      {filterData.length === 0 && <h1>Item not found</h1>}
+      {filterData.length === 0 && <NoItemsFound />}
     </section>
   );
 };

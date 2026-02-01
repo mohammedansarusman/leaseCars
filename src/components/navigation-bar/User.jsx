@@ -7,21 +7,27 @@ export const User = async () => {
   return (
     <>
       <form className="flex gap-2 items-center" action={doLogOut}>
-      <h1>{session ? session?.user?.name : "Guest"}</h1>
-      <Image
-        src={session ? session?.user?.image : "/default-user.png"}
-        alt="User Profile"
-        width={30}
-        height={30}
-        className="rounded-full ml-2"
-      />
-      <button className="bg-sky-800 text-white font-base px-2 rounded-lg"
-        type="submit"
-      >
-        {session?.user?.name && "Sign out"}
-      </button>
-    </form>
+        <h1>{session ? session?.user?.name : "Guest"}</h1>
+        {session?.user?.name ? (
+          <Image
+            src={session ? session?.user?.image : "/default-user.png"}
+            alt="User Profile"
+            width={30}
+            height={30}
+            className="rounded-full ml-2"
+          />
+        ) : (
+          <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+            <span className="text-2xl">😎</span>
+          </div>
+        )}
+        <button
+          className="bg-sky-800 text-white font-base px-2 rounded-lg"
+          type="submit"
+        >
+          {session?.user?.name && "Sign out"}
+        </button>
+      </form>
     </>
-    
   );
 };

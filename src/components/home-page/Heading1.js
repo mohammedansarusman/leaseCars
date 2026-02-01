@@ -28,7 +28,7 @@ export const Heading1 = () => {
         </Link>
       </div>
       {/* Image  -   */}
-      <div className="hidden md:block md:w-1/2  bg-pink-300">
+      <div className="hidden md:block md:w-1/2">
         <Image alt="homepage-image" src="/youngCouple.webp" width={150} height={200} objectFit="contain" className="w-full h-full"/>
       </div>
     </div>

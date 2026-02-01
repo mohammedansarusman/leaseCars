@@ -13,11 +13,20 @@ export const SearchBar = () => {
     if(!carModel){
       dispatch(setFilterData(carsData))
     }
+
+    const timeOut = setTimeout(()=>{
+      const data = carsData.filter(item=>item.model.toLowerCase().includes(carModel.toLowerCase()))
+      dispatch(setFilterData(data))
+    },500)
+    return ()=>{
+      clearTimeout(timeOut);
+    }
+
   },[carModel])
   
   const handleChange = (e)=>{
-    const data = carsData.filter(item=>item.model.toLowerCase().includes(e.target.value.toLowerCase()))
-    dispatch(setFilterData(data))
+    // every change in input update the car model in the store
+    // and trigger the useEffect to filter the data via debounce
     dispatch(setCarModel(e.target.value));
   }
 

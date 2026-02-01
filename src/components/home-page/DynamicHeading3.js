@@ -32,7 +32,7 @@ export const DynamicHeading3 = () => {
       className={`w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[300] xl:h-[350px] 2xl:h-[400px] relative ${bruno.className} rounded-full`}
     >
       <Image
-        src="/howitWorks.jpg"
+        src="/howItWorks.jpg"
         alt="banner-img"
         fill
         style={{ objectFit: "cover" }}
