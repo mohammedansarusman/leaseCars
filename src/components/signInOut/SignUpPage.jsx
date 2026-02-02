@@ -1,5 +1,5 @@
 "use client";
-
+import { redirect } from "next/navigation";
 import { Heading } from "@/components/signInOut/Heading";
 import { InputField } from "@/components/signInOut/InputField";
 import { useState } from "react";
@@ -24,11 +24,14 @@ export const SignUpPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     isFormValidOnSubmit();
-    // handle form submission logic here
-    if(!errorMessage.firstName && !errorMessage.lastName){
-      console.log("Form submitted");
-
+    if(Object.values(fields).some(field => field.trim() === "")){
+      redirect('/sign-up');
     }
+    // handle form submission logic here
+    if(!errorMessage.firstName && !errorMessage.lastName && !errorMessage.email && !errorMessage.password && !errorMessage.mobile){
+      redirect('/payment');
+    }
+    
   };
   const handleChange = (event) => {
     const { name, value } = event?.target;
@@ -115,7 +118,6 @@ export const SignUpPage = () => {
       mobile: message,
     }));
   }
-
 
   return (
     <div>
